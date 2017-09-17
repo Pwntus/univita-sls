@@ -1,0 +1,2 @@
+handler:            handlers/test.main
+name:               ${self:provider.stage}-test

@@ -1,0 +1,14 @@
+Type: AWS::Cognito::IdentityPool
+Properties:
+  IdentityPoolName: IdentityPool
+  AllowUnauthenticatedIdentities: False
+  #SupportedLoginProviders:
+    #accounts.google.com: ${self:provider.environment.GOOGLE_APP_ID}
+  CognitoIdentityProviders:
+    - ClientId:
+        Ref: UserPoolClient
+      ProviderName:
+        Fn::GetAtt:
+          - UserPool
+          - ProviderName
+      ServerSideTokenCheck: True

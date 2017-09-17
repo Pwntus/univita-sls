@@ -1,0 +1,7 @@
+Type: AWS::Cognito::UserPoolClient
+Properties:
+  ClientName: ${self:provider.stage}-UserPoolClient
+  GenerateSecret: False
+  RefreshTokenValidity: 30
+  UserPoolId:
+    Ref: UserPool
